@@ -4,6 +4,7 @@
  * */
 
 #include "as1.hpp"
+#include "as2.hpp"
 #include <iostream>
 
 using namespace homework;
@@ -20,5 +21,13 @@ int main() {
   std::cout << d.get() << "\n";
   d.set(10);
   std::cout << d.get() << "\n";
+  std::cout << "as 2.1: \n"; 
+  Knight J{"John"};
+  J.setWeapon("morningstar");
+  J.attack();
+  auto P=J.clone(); 
+  J.setWeapon("sword");
+  P->attack();
+
 }
 

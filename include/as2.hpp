@@ -43,6 +43,28 @@ namespace homework {
   // Note: use std::make_unique in clone() and the \it{this} pointer to copy the object. E.g. std::make_unique<Type>(*this);
   // The attack should use std::cout to print something like "<name> swings a <weapon>\n"
   // The setWeapon() method should set the weapon variable (the private member variable) 
+  class Knight : public Entity {
+    public:
+      explicit Knight(std::string n) : Entity(n) {}
+      void attack() const {
+        if (weapon.empty()) {
+          std::cout << name << " has no weapon \n";
+        }
+        else {
+          std::cout << name << " swings a " << weapon << "\n";
+      }
+        }
+        
+      void setWeapon(std::string w) {
+        weapon=w;
+      }
+      std::unique_ptr<Entity> clone() const {
+        return std::make_unique<Knight>(*this);
+      }
+    private:
+      std::string weapon;
+  };
+
 
   // as 2.2
   // Derived class Sorcerer
