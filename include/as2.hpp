@@ -71,7 +71,25 @@ namespace homework {
   // TO DO: implement attack() and clone() and setAbility()
   // Same as the Knight class
 
-
+  class Sorcerer : public Entity {
+    public:
+      explicit Sorcerer(std::string n) : Entity(n) {}
+      void attack() const {
+        if (ability.empty()) {
+          std::cout << name << " has no ability \n";
+        }
+        else {
+          std::cout << name << " casts a " << ability << "\n";
+      }
+      }
+      void setAbility(std::string a) {ability=a;}
+      std::unique_ptr<Entity> clone() const {
+        return std::make_unique<Sorcerer>(*this);
+      } 
+      
+    private:
+        std::string ability;
+};
 
   /////////
 

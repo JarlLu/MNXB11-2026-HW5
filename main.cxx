@@ -28,6 +28,12 @@ int main() {
   auto P=J.clone(); 
   J.setWeapon("sword");
   P->attack();
-
+  std::cout << "as 2.2: \n";
+  Sorcerer S{"Steve"}; 
+  S.setAbility("fireball");
+  S.attack();
+  auto Sc=S.clone();
+  S.setAbility("water splash");
+  Sc->attack();
 }
 
