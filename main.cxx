@@ -9,6 +9,11 @@
 using namespace homework;
 
 int main() { 
-  
+  std::cout << "as 1.1 \n";
+  int a = 1;
+  int b = 2;
+  int c = 3;
+  swap_ptr(&a, &b, &c);
+  std::cout << a << "\n"; 
 }
 
