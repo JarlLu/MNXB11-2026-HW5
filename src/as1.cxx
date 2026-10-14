@@ -10,4 +10,13 @@ void swap_ptr(int* a, int* b, int *c) {
     *b= c_temp;
     *c= a_temp;}
 
+
+    UniqueData::UniqueData(int value) : data_(std::make_unique<int>(value)) {}
+    int UniqueData::get() const{
+        return *data_;
+        }
+    void UniqueData::set(int value) {
+        *data_=value;
+        }  
+
 }; // namespace homework
